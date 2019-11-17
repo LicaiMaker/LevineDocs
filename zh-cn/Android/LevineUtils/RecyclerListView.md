@@ -55,7 +55,7 @@ recyclerViewPager.setAdapter(adapter);
 
 效果如下：
 
-![image-20191117162240203](C:\Users\summer\AppData\Roaming\Typora\typora-user-images\image-20191117162240203.png)
+![image-20191117162240203](../../../_media/imgs/image-20191117162240203.png)
 
 #### 设置ItemDecoration
 

@@ -85,3 +85,4 @@ recyclerViewPager.setAdapter(adapter);
 recyclerViewPager.setTabLayout(tabLayout);
 ```
 
+![image-20191117234157324](C:\Users\summer\AppData\Roaming\Typora\typora-user-images\image-20191117234157324.png)

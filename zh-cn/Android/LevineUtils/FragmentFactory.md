@@ -1,4 +1,4 @@
-> 这篇文章专门用于讲述LevineUtils中的FragmentFactory
+> 这篇文章专门用于讲述LevineUtils中的FragmentFactory，需要集成[LevineUtils](/zh-cn/Android/LevineUtils/README)
 
 ###  1.FragmentFactory简介
 
@@ -8,7 +8,7 @@
 
 ###  2.使用FragmentFactory
 
-> 注：需要继承[LevineUtils](/zh-cn/Android/LevineUtils/README)
+> 注：需要集成[LevineUtils](/zh-cn/Android/LevineUtils/README)
 
 ####  **初始化FragmentFactory**
 

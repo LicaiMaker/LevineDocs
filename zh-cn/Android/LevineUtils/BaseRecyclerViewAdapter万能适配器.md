@@ -121,7 +121,7 @@ BaseRecyclerViewAdapter将数据绑定交给了调用者(convert方法)，调用
 
 另外，经常会使用不同的布局的item，如：
 
-![多布局支持](https://upload-images.jianshu.io/upload_images/15986528-30d4aae14d7f4f60.png?imageMogr2/auto-orient/strip|imageView2/2/w/465/format/webp)
+![多布局支持](../../../_media/imgs/webp)
 
 在BaseRecyclerViewAdapter中也提供了多布局接口setMultiTypeSupport(BaseRecyclerViewAdapter.MultiTypeSupport<T> interface).
 

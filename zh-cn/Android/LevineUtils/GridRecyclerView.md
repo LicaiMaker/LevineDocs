@@ -76,6 +76,6 @@ recyclerListView.addItemDecoration(itemDecoration);
 
 效果如下：
 
-![image-20191117154219602](C:\Users\summer\AppData\Roaming\Typora\typora-user-images\image-20191117154219602.png)更多
+![image-20191117154219602](../../../_media/imgs/image-20191117154219602.png)更多
 
 当然可以使用自定义其他样式的*[ItemDecoration](/zh-cn/Android/LevineUtils/ItemDecoration)*

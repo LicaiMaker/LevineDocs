@@ -33,7 +33,7 @@ recyclerListView.addItemDecoration(levineItemDecoration);
 
 设置左右两端的Padding值，并且样式是一个drawable类型的资源，效果如下：
 
-![image-20191117164249671](C:\Users\summer\AppData\Roaming\Typora\typora-user-images\image-20191117164249671.png)
+![image-20191117164249671](../../../_media/imgs/image-20191117164249671.png)
 
 
 
@@ -58,7 +58,7 @@ recyclerListView.addItemDecoration(levineItemDecoration);
 
 设置左右两端的Padding值：
 
-![image-20191117165050546](C:\Users\summer\AppData\Roaming\Typora\typora-user-images\image-20191117165050546.png)
+![image-20191117165050546](../../../_media/imgs/image-20191117165050546.png)
 
 
 
@@ -116,7 +116,7 @@ recyclerListView.addItemDecoration(levineItemDecoration);
 >
 > 效果如下：
 >
-> ![image-20191117171503453](C:\Users\summer\AppData\Roaming\Typora\typora-user-images\image-20191117171503453.png)
+> ![image-20191117171503453](../../../_media/imgs/image-20191117171503453.png)
 
 
 
@@ -158,7 +158,7 @@ recyclerListView.addItemDecoration(titleItemDecoration);
 
 效果如下：
 
-![image-20191117173447722](C:\Users\summer\AppData\Roaming\Typora\typora-user-images\image-20191117173447722.png)
+![image-20191117173447722](../../../_media/imgs/image-20191117173447722.png)
 
 红框所勾选的区域便是TitleItemDecoration.
 

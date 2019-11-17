@@ -160,4 +160,4 @@ recyclerListView.addItemDecoration(levineItemDecoration);
 
 最终效果：
 
-![image-20191117174920520](C:\Users\summer\AppData\Roaming\Typora\typora-user-images\image-20191117174920520.png)
+![image-20191117174920520](../../../_media/imgs/image-20191117174920520.png)

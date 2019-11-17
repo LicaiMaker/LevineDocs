@@ -118,5 +118,5 @@ BaseExpandableRecyclerViewAdapter adapter=new BaseExpandableRecyclerViewAdapter<
 
 效果如下：
 
-![image-20191117182312450](C:\Users\summer\AppData\Roaming\Typora\typora-user-images\image-20191117182312450.png)
+![image-20191117182312450](../../../_media/imgs/image-20191117182312450.png)
 

@@ -1,7 +1,7 @@
 * Introduction
     * [简介](/)
-    * [github主页](<https://github.com/LicaiMaker/mydocs>)
+    * [github主页](<https://github.com/LicaiMaker/CommonUtils>)
 
-* [En](/zh-cn/)
+* [En](/en/)
 * [中文](/zh-cn/) 
 

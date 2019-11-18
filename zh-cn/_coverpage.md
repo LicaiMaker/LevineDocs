@@ -1,4 +1,4 @@
-<img width="180px" height="170px" style="border-radius: 50%" bor src="_media/logo.jpg">
+<img width="180px" height="170px" style="border-radius: 50%" bor src="../_media/logo.jpg">
 
 # LevineDocs
 
@@ -7,5 +7,5 @@
 [![stars](https://badgen.net/github/stars/LicaiMaker/LevineDocs?icon=github&color=4ab8a1)](https://github.com/LicaiMaker/mydocs) [![forks](https://badgen.net/github/forks/LicaiMaker/LevineDocs?icon=github&color=4ab8a1)](https://github.com/LicaiMaker/LevineDocs)
 
 [GitHub](<https://github.com/LicaiMaker/LevineDocs>)
-[开始阅读](README.md)
+[开始阅读](/zh-cn/README.md)
 

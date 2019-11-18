@@ -4,7 +4,8 @@
 
 - 本文档是作者从事 ```django Developer```以来的学习历程，旨在为大家提供一个较详细的学习教程，侧重点更倾向于 django 服务端所涉及的技术栈，如果本文能为您得到帮助，请给予支持！
 
-[![stars](https://badgen.net/github/stars/LicaiMaker/mydocs?icon=github&color=4ab8a1)](https://github.com/LicaiMaker/mydocs) [![forks](https://badgen.net/github/forks/LicaiMaker/mydocs?icon=github&color=4ab8a1)](https://github.com/LicaiMaker/mydocs)
+[![stars](https://badgen.net/github/stars/LicaiMaker/LevineDocs?icon=github&color=4ab8a1)](https://github.com/LicaiMaker/mydocs) [![forks](https://badgen.net/github/forks/LicaiMaker/LevineDocs?icon=github&color=4ab8a1)](https://github.com/LicaiMaker/LevineDocs)
 
-[GitHub](<https://github.com/LicaiMaker/mydocs>)
+[GitHub](<https://github.com/LicaiMaker/LevineDocs>)
 [开始阅读](README.md)
+

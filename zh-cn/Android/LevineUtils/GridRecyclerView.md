@@ -51,8 +51,6 @@ GridRecyclerView其实也是*RecyclerView*的一种，同样可以使用我们�
         android:layout_height="wrap_content"/>
 ```
 
-
-
 `spaceCount`可以指定每行的item数量.  
 
 #### 设置适配器

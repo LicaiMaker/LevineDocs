@@ -1,6 +1,6 @@
 在*django*项目中，我们会使用*settings.py*中定义一些参数，比如：  
 
-```python
+```django
 SECRET_KEY = '!pv4o62*84k9s(u$y%k5$e8vura2_w)y5aa^-(e@4hk&'
 DEBUG = True
 ALLOWED_HOSTS =['*']
@@ -11,16 +11,17 @@ WX_APP_SERCRET='b07f584b45cafc8ba28909211'
 在*python*中提供了*python-decouple*:
 
 ## 1.*在Django*项目的虚拟环境中安装*python-decouple*
-```python  
+```bash
 pip install python-decouple
 ```
 
-
 ## 2.添加*.env*或者*.ini*文件，并把配置信息写入这个文件
+
 参考目录：*https://pypi.org/project/python-decouple/*
 因为我使用的是*.env*文件，创建*.ini*文件的可以参考上面的链接
+
 ### a.在*Django*项目的根目录下，创建*.env*文件，添加配置信息：
-```python  
+```django
 SECRET_KEY = !pv4o62*84k9s(u$y%k5$e8vura2_w)y5aa^-(e@4hk&
 DEBUG = True
 ALLOWED_HOSTS =*
@@ -34,7 +35,7 @@ WX_APP_SERCRET=b07f584b45cafc8ba28909211
 
 >注：如果*.gitignore*文件不能生效(*commit*时仍然将*.env*文件提交了)，此时可以执行：
 
-```python  
+```bash  
 #cmd 进入.gitignore所在的目录下，删除缓存
 git rm -r --cached .
 git add .
@@ -44,7 +45,7 @@ git commit -m 'update .gitignore'
 
 
 ## 3.在settings.py中调用.env中的变量
-```python  
+```django
 from decouple import config,Csv
 #SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
@@ -59,7 +60,8 @@ WX_APP_SERCRET=config('WX_APP_SERCRET')
 GITHUB_WEBHOOK_KEY=config('GITHUB_WEBHOOK_KEY')
 ```
 *config*中有个参数 cast,在官方文档上是这么写的：
-```python  
+
+```django
 By default, all values returned by decouple are strings, after all they are read from text files or the envvars.
 However, your Python code may expect some other value type, for example:
     Django’s DEBUG expects a boolean True or False.
@@ -68,29 +70,30 @@ However, your Python code may expect some other value type, for example:
     Django’s SECURE_PROXY_SSL_HEADER expects a tuple with two elements, the name of the header to look for and the required value.
 ```
 *cast*表示相应的返回值类型，但只能返回常用的基本类型，比如要想返回一个列表，那只能自定义一个*lambda*函数:
-```python  
+
+```django
 config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
 ```
 
 但是这个写法太复杂了，在decouple中已经定义好了相应的函数*Csv()*：
-```python  
+```django
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 ```
 > 参考链接：*https://pypi.org/project/python-decouple/#id12*
 
 ## 4.提交本地修改到*github*,然后服务器从github上*pull*代码
 在提交本地代码之前，先将本地的虚拟环境的配置导出来，早*pycahrm*中打开*Terminal*，此时显示已经是在项目的根目录下，并且在虚拟环境中，执行
-```python  
+```bash
 pip freeze >requirements.txt
 ```
 这样就生成了配置清单，并随后将会被上传值*github*
-```python  
+```bash
 git add .
 git commit -m 'update'
 git push
 ```
 登录服务器，将*github*刚刚更新的代码*pull*下来，进入虚拟环境，然后进入*Django*项目的根目录下，看到*requirements.txt*文件，执行：
-```python  
+```bash
 pip install -r requirements.txt
 ```
 导入安装更新的包。
@@ -99,17 +102,17 @@ pip install -r requirements.txt
 
 因为已经将相应的变量通过*decouple*从*settings.py*中分离出来了，不用上传*github*，但是服务器上需要使用这些变量，故需将*.env*文件上传至服务器的相应目录，保证了这些数据的安全性。
 使用*scp*命令将本地文件上传至阿里云服务器：
-```javascript  
+```bash
 scp 本地文件 登录名@服务器ip地址:Django项目根目录下
 ```
 比如我的上传*.env*文件到服务器的*Django*项目根目录下的命令：
-```javascript  
+```bash
 scp /e/mysite/.env root@182.92.119.50:/home/mysite/
 ```
 
 
 重启服务器就可以了
-```javascript  
+```bash
 service apache2 restart
 ```
 

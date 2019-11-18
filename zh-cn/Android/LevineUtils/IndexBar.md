@@ -70,13 +70,13 @@ public class IndexBar extends AppCompatTextView {
 #### 为indexbar设置数据源
 
 ```java
-   				final IndexBar mIndexBar = holder.getViewAtId(R.id.mIndexBar);
-                TextView mIndexTV = holder.getViewAtId(R.id.mIndexTV);
-                mIndexBar.setmIndexDatas(list)
-                        .setmPressedShowTextView(mIndexTV)
-                        .setIndexTextColor(Color.GRAY)
-                        .setSelectedTextColor(Color.BLACK)
-                        .setRecyclerView(recyclerListView);//实现和recyclerview联动
+final IndexBar mIndexBar = holder.getViewAtId(R.id.mIndexBar);
+TextView mIndexTV = holder.getViewAtId(R.id.mIndexTV);
+mIndexBar.setmIndexDatas(list)
+         .setmPressedShowTextView(mIndexTV)
+         .setIndexTextColor(Color.GRAY)
+         .setSelectedTextColor(Color.BLACK)
+         .setRecyclerView(recyclerListView);//实现和recyclerview联动
 ```
 
 其中list：

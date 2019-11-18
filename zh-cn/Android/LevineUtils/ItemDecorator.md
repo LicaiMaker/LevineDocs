@@ -41,7 +41,7 @@ recyclerListView.addItemDecoration(levineItemDecoration);
 
 #### PaddingItemDecoration的简介
 
-```PaddingItemDecoration```其实是LevineItemDecoration的简易版，只是少了一个setDrawable方法.
+``PaddingItemDecoration``其实是`LevineItemDecoration`的简易版，只是少了一个setDrawable方法.
 
 
 

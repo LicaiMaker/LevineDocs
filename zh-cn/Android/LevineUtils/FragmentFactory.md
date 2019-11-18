@@ -244,27 +244,26 @@ public class AnotherActivity extends AppCompatActivity {
 
 - 1.首先重写Activity的OnSaveInstance和OnRestoreInstance方法
 
-  ```javascript
-   	@SuppressLint("MissingSuperCall")
-      @Override
-      protected void onSaveInstanceState(@NonNull Bundle outState) {
+  ```java
+   @SuppressLint("MissingSuperCall")
+   @Override
+   protected void onSaveInstanceState(@NonNull Bundle outState) {
   		//去掉super.onSaveInstanceState(outState),这是重影问题的根源
           mFactory.saveCurrentFragmentInfo(outState);
       }
-  	
-  
-  	@Override
-      protected void onRestoreInstanceState(Bundle savedInstanceState) {
+   @Override
+   protected void onRestoreInstanceState(Bundle savedInstanceState) {
           if (savedInstanceState != null) {
               mFactory.restoreCurrentFragmentInfo(savedInstanceState);
           }
       }
   ```
 
+  
+
 - 2.在onCreate中也调用restoreCurrentFragmentInfo方法
 
   ```java
-  
     private FragmentFactory mFactory;
       @Override
       protected void onCreate(Bundle savedInstanceState) {
@@ -284,8 +283,8 @@ public class AnotherActivity extends AppCompatActivity {
       }
   
   ```
-
-  这样就解决了重影问题。
+  
+这样就解决了重影问题。
 
 
 

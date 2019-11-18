@@ -43,7 +43,7 @@ RecyclerListView其实也是*RecyclerView*的一种，同样可以使用我们�
         android:layout_height="match_parent"/>
 ```
 
-```android:orientation```可以指定ViewPager的方向，有```horizontal```和```vertical```两个选项.
+``android:orientation``可以指定ViewPager的方向，有```horizontal```和```vertical```两个选项.
 
 #### 设置适配器
 

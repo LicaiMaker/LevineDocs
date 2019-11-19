@@ -1,18 +1,16 @@
-> 这篇文章专门用于讲述LevineUtils中的FragmentFactory，需要集成[LevineUtils](/zh-cn/Android/LevineUtils/README)
+> 这篇文章专门用于讲述LevineUtils中的`FragmentFactory`，需要集成[LevineUtils](/en/Android/LevineUtils/README)
 
 ###  1.FragmentFactory简介
 
-* FragmentFactory是利用apt技术，即通过注解的方式来管理整个应用中的自定义的Fragment,通过FragmentFactory对象的showFragment(String tag)方法来控制fragment的显示和隐藏，从而实现了fragment的切换. 
+* `FragmentFactory`是利用apt技术，即通过注解的方式来管理整个应用中的自定义的Fragment,通过`FragmentFactory`对象的showFragment(String tag)方法来控制fragment的显示和隐藏，从而实现了fragment的切换. 
 
-- FragmentFactory同时也对fragment的重影问题给出了解决方案,通过使用saveCurrentFragmentInfo(Bundle bundle)和restoreCurrentFragmentInfo(Bundle bundle)方法保存状态和恢复状态.
+- `FragmentFactory`同时也对fragment的重影问题给出了解决方案,通过使用<font color=green>saveCurrentFragmentInfo(Bundle bundle)</font>和<font color=green>restoreCurrentFragmentInfo(Bundle bundle)</font>方法保存状态和恢复状态.
 
 ###  2.使用FragmentFactory
 
-> 注：需要集成[LevineUtils](/zh-cn/Android/LevineUtils/README)
-
 ####  **初始化FragmentFactory**
 
-在activity中的onCreate方法中初始化FragmentFactory对象，但是需要注意的是需要继承自FragmentActicity 或者AppCompatActicity，因为在FragmentFactory中使用的是getSupportFragmentManager,所以你的activity必须继承自FragmentActivity或
+在activity中的onCreate方法中初始化`FragmentFactory`对象，但是需要注意的是需要继承自FragmentActicity 或者AppCompatActicity，因为在`FragmentFactory`中使用的是getSupportFragmentManager,所以你的activity必须继承自FragmentActivity或
 
 AppCompatActivity:
 
@@ -23,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
          setContentView(R.layout.activity_main);
-         //使用单例模式创建FragmentFactory对象,R.id.mContentnF1是要显示的Fragment的布局容器的id
+         //使用单例模式创建`FragmentFactory`对象,R.id.mContentnF1是要显示的Fragment的布局容器的id
          mFactory = FragmentFactory.getInstance()
                 .init(this, R.id.mContentFl);
         ....
@@ -71,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
 ```
 
-自定义两个Fragment用于tab点击时，切换使用（此时要在Fragment的外部使用@TargetFragmentTag(String tag)注解，里面需要接收一个string类型的tag，用于和当前的fragment 一 一对应,这个注解也是在LevineUtils中自定义的）：
+自定义两个Fragment用于tab点击时，切换使用（此时要在Fragment的外部使用`@TargetFragmentTag(String tag)`注解，里面需要接收一个string类型的tag，用于和当前的fragment 一 一对应):
 
 ```java
 @TargetFragmentTag("fragment1")
@@ -85,13 +83,13 @@ public class Fragment2 extends Fragment {
 }
 ```
 
-> 注： 相当于Fragment1的tag就是“fragment1”，Fragment的tag就是“fragment2”，但是鉴于方便管理整个应用中所有Fragment的标签,所以同意建立一个类来存贮fragment的标签，比如，建立一个接口类FragmentTag：
+> 注： 相当于`Fragment1`的tag就是“ <font color=green face="consolas">fragment1</font>”，`Fragment2`的tag就是“ <font color=green face="consolas">fragment2</font>”，但是鉴于方便管理整个应用中所有Fragment的标签,所以建议创建一个类来存贮所有fragment的标签，比如，建立一个接口类FragmentTag：
 >
 > ```java
 > public interface FragmentTag {
->     String FRAGMENT1="fragment1";
->     String FRAGMENT2="fragment2";
->     
+>  String FRAGMENT1="fragment1";
+>  String FRAGMENT2="fragment2";
+>  
 > }
 > ```
 >
@@ -100,12 +98,12 @@ public class Fragment2 extends Fragment {
 > ```java
 > @TargetFragmentTag(FragmentTag.FRAGMENT1)
 > public class Fragment1 extends Fragment {
->     .....
+>  .....
 > }
 > 
 > @TargetFragmentTag(FragmentTag.FRAGMENT2)
 > public class Fragment2 extends Fragment {
->     .....
+>  .....
 > }
 > ```
 
@@ -122,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
          setContentView(R.layout.activity_main);
-         //使用单例模式创建FragmentFactory对象,R.id.mContentnF1是要显示的Fragment的布局容器的id
+         //使用单例模式创建`FragmentFactory`对象,R.id.mContentnF1是要显示的Fragment的布局容器的id
          mFactory = FragmentFactory.getInstance()
                 .init(this, R.id.mContentFl);
         //默认显示fragment1
@@ -152,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
 
 #### **跨Activity使用FragmentFactory**
 
-在APP中可能有多个Activity，每个Activity中有多个Fragment，所以经常会在全局中使用FragmentFactory(跨Activity)，那也是可以的，因为FragmentFactory在初始化时，传入了一个Activity的对象，所以在跨Activity使用时，只需要重新初始化一下即可，各个Activity中使用FragmentFactory是相互独立的.
+在APP中可能有多个Activity，每个Activity中有多个Fragment，所以经常会在全局中使用`FragmentFactory`(跨Activity)，那也是可以的，因为`FragmentFactory`在初始化时，传入了一个Activity的对象，所以在跨Activity使用时，只需要重新初始化一下即可，各个Activity中使用`FragmentFactory`是相互独立的.
 
 例如：在另一个Activity中有一个有Fragment3和Fragment4,同样地：
 
@@ -173,7 +171,7 @@ public class AnotherActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
          setContentView(R.layout.activity_another);
-         //使用单例模式创建FragmentFactory对象,R.id.mContentnF2是要显示的Fragment的布局容器的id
+         //使用单例模式创建`FragmentFactory`对象,R.id.mContentnF2是要显示的Fragment的布局容器的id
          mFactory = FragmentFactory.getInstance()
                 .init(this, R.id.mContentF2);
         //默认显示fragment3
@@ -240,7 +238,7 @@ public class AnotherActivity extends AppCompatActivity {
 </manifest>
 ```
 
-另外，其他情况下的解决方案，在FragmentFactory中也给出了解决方案：
+另外，其他情况下的解决方案，在`FragmentFactory`中也给出了解决方案：
 
 - 1.首先重写Activity的OnSaveInstance和OnRestoreInstance方法
 
@@ -269,7 +267,7 @@ public class AnotherActivity extends AppCompatActivity {
       protected void onCreate(Bundle savedInstanceState) {
            super.onCreate(savedInstanceState);
            setContentView(R.layout.activity_another);
-           //使用单例模式创建FragmentFactory对象,R.id.mContentnF2是要显示的Fragment的布局容器的id
+           //使用单例模式创建`FragmentFactory`对象,R.id.mContentnF2是要显示的Fragment的布局容器的id
            mFactory = FragmentFactory.getInstance()
                   .init(this, R.id.mContentF2);
           
@@ -283,7 +281,7 @@ public class AnotherActivity extends AppCompatActivity {
       }
   
   ```
-  
+
 这样就解决了重影问题。
 
 

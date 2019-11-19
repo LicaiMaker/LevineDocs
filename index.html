@@ -21,7 +21,32 @@
 	  autoHeader: true,
 	  executeScript: true,
 	  alias: {
-      '/.*/_navbar.md': '/_navbar.md'
+		'/.*/_navbar.md': '/_navbar.md'
+		},
+	  repo: 'LicaiMaker/LevineUtils',
+	   
+	// 完整配置参数
+    search: {
+     
+      placeholder: 'Type to search',
+
+      // 支持本地化
+      placeholder: {
+        '/zh-cn/': '搜索',
+        '/en/': 'Type to search',
+		'/':'搜素'
+      },
+
+      noData: 'No Results!',
+
+      // 支持本地化
+      noData: {
+        '/zh-cn/': '找不到结果',
+        '/': 'No Results'
+      },
+
+      // 搜索标题的最大程级, 1 - 6
+      depth: 5
     }
     }
   </script>
@@ -31,6 +56,9 @@
   <script src="https://unpkg.com/prismjs/components/prism-python.js"></script>
   <script src="https://unpkg.com/prismjs/components/prism-django.js"></script>
   <script src="https://unpkg.com/prismjs/components/prism-groovy.js"></script>
-  
+  <script src="https://unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+  <script src="https://unpkg.com/docsify-copy-code"></script>
+  <!--<script src="https://unpkg.com/docsify"></script>-->
+  <script src="https://unpkg.com/docsify/lib/plugins/search.js"></script>
 </body>
 </html>

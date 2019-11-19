@@ -2,11 +2,11 @@
 
 #### 1.LevineUtils简介
 
-[![stars](https://badgen.net/github/stars/LicaiMaker/CommonUtils?icon=github&color=4ab8a1)](https://github.com/LicaiMaker/CommonUtils) [![forks](https://badgen.net/github/forks/LicaiMaker/CommonUtils?icon=github&color=4ab8a1)](https://github.com/LicaiMaker/CommonUtils)
+[![stars](https://badgen.net/github/stars/LicaiMaker/LevineUtils?icon=github&color=4ab8a1)](https://github.com/LicaiMaker/LevineUtils) [![forks](https://badgen.net/github/forks/LicaiMaker/LevineUtils?icon=github&color=4ab8a1)](https://github.com/LicaiMaker/LevineUtils)
 
 LevineUtils是关于android中常用的工具模块集合，使用java语言.其中包含了用来全局显示和隐藏Fragment的FragmentFactory,和自定义的RecyclerListView,Recyclerview的万能适配器，RecyclerViewpager,Grdiview,ItemDecoration等许多常用的自定义view，还包含一些LogUtils等常用工具.
 
-Github地址:[LevineUtils](https://github.com/LicaiMaker/CommonUtils)
+Github地址:[LevineUtils](https://github.com/LicaiMaker/LevineUtils)
 
 ####  2.在项目的根目录下的build.gradle文件添加maven地址
 
@@ -27,10 +27,10 @@ allprojects {
 ####  3.在使用的module中的build.gradle文件中添加依赖
 
 ```groovy
- api "com.github.LicaiMaker:CommonUtils:${levine_utils_version}"
+ api "com.github.LicaiMaker:LevineUtils:${levine_utils_version}"
 ```
 
-levine_utils_version:[![](https://jitpack.io/v/LicaiMaker/CommonUtils.svg)](https://jitpack.io/#LicaiMaker/CommonUtils)
+levine_utils_version:[![](https://jitpack.io/v/LicaiMaker/LevineUtils.svg)](https://jitpack.io/#LicaiMaker/LevineUtils)
 
 > 使用api声明依赖的话具有依赖延续性，即可以在依赖这个module的module中使用LevineUtils；而使用implements声明依赖则只能在本module中使用.     
 

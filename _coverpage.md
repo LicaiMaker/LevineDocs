@@ -1,4 +1,4 @@
-<img width="180px" height="170px" style="border-radius: 50%" bor src="_media/logo.jpg">
+<img width="200px" height="200px" style="border-radius: 50%" src="_media/imgs/1_nospace-1574243383931.png"/>
 
 # LevineDocs
 

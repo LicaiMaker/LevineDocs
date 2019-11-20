@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
     }
 ```
 
-> Fragment在切换时，会自动将当前的Fragment隐藏，但并非销毁掉，下次重新切换回来时，会再将这个Fragment显示出来.
+> Fragment在切换时，会自动将当前的Fragment隐藏，但并非销毁掉，下次重新切换回来时，会再将这个Fragment显示出来.其实FragmetnFactory还能实现`回退栈`的功能:回退到上一个`Fragment`，同样能使用`showFragment`方法，只要传入上一个Fragment的tag即可.
 
 #### **跨Activity使用FragmentFactory**
 

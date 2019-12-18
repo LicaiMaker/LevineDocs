@@ -26,8 +26,18 @@ public class MainActivity extends AppCompatActivity {
                 .init(this, R.id.mContentFl);
         ....
     }
+     @Override
+    protected void onResume() {
+        super.onResume();
+        //很关键，在activity切换时起作用，如果APP使用单activity，则不需要这句代码
+        mFactory.onResume(this,R.id.mContentFl);
+    }
 }
 ```
+
+
+
+
 
 #### **自定义Fragment**
 

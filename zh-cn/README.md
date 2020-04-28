@@ -2,7 +2,7 @@
 
 > [Android](/zh-cn/Android/)  
 
-> [Python](/zh-cn/django/)
+> [Python](/zh-cn/python/)
 
 > [Markdown]()
 

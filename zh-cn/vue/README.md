@@ -2,9 +2,9 @@
 
 ### [vue常见问题.md](/zh-cn/vue/vue常见问题.md) 
 
-###  [element-ui.md](/zh-cn/vue/element-ui.md) 
+###  [element-ui.md](/zh-cn/vue/element-ui.md)
 
-### [vue使用history模式，导致微信网页签名失败，invalid signature.md](/zh-cn/vue/vue使用history模式-导致微信网页签名失败invalid-signature.md )
+### [vue使用history模式，导致微信网页签名失败，invalid signature.md](/zh-cn/vue/vue使用history模式-导致微信网页签名失败invalid-signature.md)
 
 ### [vue中当前页面刷新问题（nginx解决）.md](/zh-cn/vue/vue中当前页面刷新问题（nginx解决）.md)
 

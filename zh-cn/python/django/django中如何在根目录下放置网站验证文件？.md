@@ -12,14 +12,17 @@
 # Nginx配置
 
 在Nginx中的配置文件中添加以下配置：
-### 第一种配置方法
+###  第一种配置方法
+
 `
 location = /abcdefg.txt {
 root /var/xyz/;
 }
 `
+
 > 使用等号，优先级最高
-### 第二种配置方法
+###  第二种配置方法
+
 `
 location /aaa.txt {
     alias /path/to/aaa.txt;

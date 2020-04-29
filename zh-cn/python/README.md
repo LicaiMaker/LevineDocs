@@ -1,3 +1,3 @@
 # *python技术文档*
 
-## [django](django)
+ [django](./django)

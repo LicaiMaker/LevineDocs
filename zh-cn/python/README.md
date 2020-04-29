@@ -1,3 +1,4 @@
 # *python技术文档*
 
- [django](./django)
+ [django](/zh-cn/python/django/)
+

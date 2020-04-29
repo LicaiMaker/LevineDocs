@@ -1,4 +1,5 @@
 #### 开发准备：
+
 - node.js(安装地址：https://nodejs.org/zh-cn/download/)  
 
 为避免npm下载很慢，可以使用淘宝镜像：

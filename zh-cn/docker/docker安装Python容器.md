@@ -25,4 +25,4 @@ docker exec -it p1 bash
 ```shell
 pip install flask -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
-> 使用清华大学的pip库,安装更快
+> -i 指定库源，使用清华大学的pip库,安装更快

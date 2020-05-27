@@ -1,4 +1,5 @@
 # 新建项目注意事项
+
 ### - 使用flask-script启动项目 
 `pip install flask-script`
 引入flask_script中的Manager，并用app对象初始化Manager:

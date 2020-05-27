@@ -8,7 +8,13 @@
 
 ### [vue中当前页面刷新问题（nginx解决）.md](/zh-cn/vue/vue中当前页面刷新问题（nginx解决）.md)
 
-### [vue中动态改变title.md](/zh-cn/vue/vue中动态改变title.md) 
+### [vue中动态改变title.md](/zh-cn/vue/vue中动态改变title.md)
 
 ### [vue中使用element-ui中的loading并自定义样式.md](/zh-cn/vue/vue中使用element-ui中的loading并自定义样式.md)
+
+### [封装axios和创建api接口.md](/zh-cn/vue/封装axios和创建api接口.md)
+
+### [vue中使用async和await.md](/zh-cn/vue/vue中使用async和await.md)
+
+### [vue自定义组件.md](/zh-cn/vue/vue自定义组件.md)
 

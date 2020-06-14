@@ -9,7 +9,6 @@ WSGI就是这样的一个协议：它是一个Python程序和用户请求之间�
 
 简单来说gunicorn封装了HTTP的底层实现，我们通过gunicorn启动服务，用户请求与服务相应都经过gunicorn传输。
 gevent是支持协程的第三方库，具体详情见：https://www.liaoxuefeng.com/wiki/897692888725344/966405998508320
-
 ## 编写gunicorn.conf.py文件
 在项目的更目录下新建文件gunicorn.conf.py文件，用于保存gunicorn的配置，内容如下：
 ```python
@@ -37,7 +36,7 @@ loglevel = 'warning'
 ```
 ## 配置nginx
 /etc/nginx/sites-available目录下新建一个配置文件,名字随便取，我的叫oldmaninfo.conf,在文件中输入：
-```nginx
+```python
 server {
     listen      80;
     server_name mustberich.cn;
@@ -84,3 +83,8 @@ nohup gunicorn  -c gunicorn.conf.py manage:app &
 >有时候需要重启gunicorn才能生效，重启gunicorn:  1.pstree -ap|grep gunicorn    
 >找到第一条中的进程号 2. kill -HUP 进程号
 >但是这种命令已经过时，一般在gunicorn.cong.py中配置参数`reload = True`即可在代码改动时自动重启
+
+> 如果使用kill -HUP 无效，则先使用kill -9 进程号，在使用kill -HUP命令
+
+
+> gunicorn 可能重启失败，可能在同目录下的nohup.txt有提示，提示如果是：`/usr/lib/x86_64-linux-gnu/libpython3.5m.so.1.0: undefined symbol: XML_SetHashSalt`,参考[链接](https://blog.csdn.net/J_H_C/article/details/84961219?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase)

@@ -37,7 +37,7 @@ if __name__ == '__main__':
 > 可以在后面加参数 --message '创建Student模型'  
 
 此时在migrations/verions中会增加一个python文件(每次迁移后生成的文件通过链表的形式关联reverion,downversion)，点击查看里面的内容，会发现有一个upgrade方法和downgrade方法，里面是对应的数据更新语句，执行upgrade方法downgrade方法数据库则会进行相应的更改：
-- ```python manage.py db upgrae```
+- ```python manage.py db upgrade```
 - ```python manage.py db downgrade```
 > 注：执行upgrade方法和downgrade方法有点类似django中`python manage.py migrate`  
 

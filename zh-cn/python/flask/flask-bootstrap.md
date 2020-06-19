@@ -1,6 +1,8 @@
 # 安装flask-bootstrap
 `pip install flask-bootstrap`
+
 # 初始化
+
 `BootStrap(app)`
 # 使用
 首先在一个HTML文件中继承bootstrap/base.html文件

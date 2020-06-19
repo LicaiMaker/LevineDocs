@@ -3,13 +3,15 @@
 > `python manage.py migrate`  
 > 两条命令就能迁移数据库，对数据库进行相应的更改，那么在flask中怎么进行数据库迁移呢？
 
-
 # 安装flask-migrate
+
 `pip install flask-mgrate`
 # 实例化flask-migrate插件
 `migrate=Migrate(app=app,db=db)`
 这里的db是SQLAlchemy实例
+
 # 使用flask-migrate
+
 ### 1.初始化
 - 基本使用：`flask db init`，
 - 配合flask-script使用，在manage.py中添加：

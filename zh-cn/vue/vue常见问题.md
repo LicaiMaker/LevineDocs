@@ -81,10 +81,12 @@ export default {
 ```
 
 # vue中使用axios向flask后端传递post参数，后端一直获取不到？
+
 有时候需要在vue中发送post请求时需要设置‘Content-Type:application/json’
 > 参考地址：[axios 发 post 请求，后端接收不到参数的解决方案](https://blog.csdn.net/csdn_yudong/article/details/79668655)
 
 # 在ios中，vue中返回上一个页面，页面不刷新的问题
+
 首先，保存页面数据的方法有以下两种：
 - 1.使用keep-alive和activated钩子函数 
 
@@ -151,7 +153,7 @@ routes: [
     }
     // 这部分代码是为了解决在ios上页面返回时不刷新的问题--end
 ```
-
+> 注意：使用window.location.reload()刷新时是会带着参数一起刷新的，如果带着参数会影响功能，需要去掉参数
 # 为什么vue组件的属性，有的需要加冒号“:”，有的不用?
 > 加冒号的，说明后面的是一个变量或者表达式；没加冒号的后面就是对应的字符串字面量！
 ```
@@ -241,3 +243,23 @@ getLocation: function(){
 }
 ```
 这样就能保证getLocation中所有接口都执行完毕之后再返回结果，而这个过程中getLocation中调用者一直是阻塞的，知道返回结果，‘用异步函数实现了同步的效果’
+
+# 在vue(js)中，如何让一段文字单行/多行显示，多余的文字不显示，并以省略号结尾？
+在css中添加以下代码即可：
+- 单行显示
+```
+text-overflow:ellipsis;
+white-space:nowrap;
+overflow:hidden;
+```
+- 多行显示
+```
+.line-clamp-n {
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: n;
+  -webkit-box-orient: vertical;
+}
+```
+> `-webkit-line-clamp: n`中的n代表显示的行数

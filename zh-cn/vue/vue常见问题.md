@@ -62,7 +62,20 @@ export default {
   }
 ```
 
-> `.el-input__inner`必须添加上，才能生效
+> `.el-input__inner`必须添加上，才能生效，.no-border-input表示自定义的名字
+
+# vue中如何修改element-ui的textarea的样式
+textarea和上面的input是不一样的，需要单独定义其样式:
+```
+/deep/  .el-textarea__inner {
+    border: 0 none; // 去掉边框
+    color: #48534A;
+    font-family: PingFangSC-Regular;
+    font-size: 2rem; // 修改字体大小
+    color: #B2B2B2;
+    letter-spacing: 0;
+  }
+```
 
 # el-input不能输入？
 在使用el-input时不能输入任何东西，只需要添加v-model属性，绑定一个变量即可。
@@ -81,12 +94,10 @@ export default {
 ```
 
 # vue中使用axios向flask后端传递post参数，后端一直获取不到？
-
 有时候需要在vue中发送post请求时需要设置‘Content-Type:application/json’
 > 参考地址：[axios 发 post 请求，后端接收不到参数的解决方案](https://blog.csdn.net/csdn_yudong/article/details/79668655)
 
 # 在ios中，vue中返回上一个页面，页面不刷新的问题
-
 首先，保存页面数据的方法有以下两种：
 - 1.使用keep-alive和activated钩子函数 
 

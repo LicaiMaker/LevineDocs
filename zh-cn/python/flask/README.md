@@ -17,3 +17,6 @@
 ### [flask中实现简单的登录验证程序.md](/zh-cn/python/flask/flask中实现简单的登录验证程序.md) 
 
 ### [jinja2模板.md](/zh-cn/python/flask/jinja2模板.md)
+
+###  [flask常见问题](/zh-cn/python/flask/flask常见问题.md)
+

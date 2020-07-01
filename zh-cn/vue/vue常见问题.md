@@ -274,3 +274,52 @@ overflow:hidden;
 }
 ```
 > `-webkit-line-clamp: n`中的n代表显示的行数
+
+# 经常显示this.xxx() is not function？
+明明方法已经定义了，为什么一直提示没有这个方法呢？
+```
+methods: {
+ textTranslate: function (text, to) {
+ 
+  $.ajax({
+   url: 'url',
+   type: 'post',
+   dataType: 'jsonp',
+   data: {
+    a:'a'
+   },
+   success: function (data) {
+    this.xxx()
+   }
+  })
+ }
+}
+```
+> 注意了：success回调函数里面的this并不是指向的VueModel,当然不能调用定义在vue文件中的方法啦
+> 解决办法：
+- 1.使用that代替this
+```
+methods: {
+ textTranslate: function (text, to) {
+ let that=this
+  $.ajax({
+   url: 'url',
+   type: 'post',
+   dataType: 'jsonp',
+   data: {
+    a:'a'
+   },
+   success: function (data) {
+    that.xxx()
+   }
+  })
+ }
+}
+```
+- 2.将方法的改为箭头函数的方法
+```
+success:(data) => {
+    that.xxx()
+ }
+```
+> 这样子箭头函数里的this其实是指向VueModel的

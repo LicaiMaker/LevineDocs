@@ -1,10 +1,11 @@
 [TOC]
 
 > 这个项目是为了前后端分离开发，使用`mock`+`nodejs`编写的模拟后端数据的服务，同时添加了同步上传到服务器上的功能
-> `github`地址：[mock-server](https://github.com/LicaiMaker/mock-server.git)
+> github地址：[mock-server](https://github.com/LicaiMaker/mock-server.git)
+
 ### 目录简介
 
-![目录结构](../../_media/imgs/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84-1597659240636.png)
+![目录结构](./目录结构.png)
 
 - `mock` 里面存放的都是接口文件/文件夹(里面的接口数据都是用`mock`模拟的)
 - `node_modules`使用的是`npm`安装的依赖库
@@ -15,12 +16,11 @@
 
 ### 使用
 
-#### 在本地启动接口
+####  第一种情况：在本地启动接口
 
 如果只在本地使用，则直接执行：
 
 ```shell
-npm install
 node mock-start.js
 ```
 
@@ -28,7 +28,9 @@ node mock-start.js
 
 并且可以实时修改代码，自动重启
 
-#### 本地监听，并且上传到服务器，并且在远端服务器启动该接口服务
+#### 第二种情况：本地监听，并且上传到服务器，并且在远端服务器启动该接口服务
+
+如果想要在远程服务器上使用
 
 - 首先修改`mock-gaze2.js`中服务器的配置
 
@@ -121,3 +123,4 @@ module.exports={
 `mock`语法：https://github.com/nuysoft/Mock/wiki
 
 > 当然可以支持多文件夹，在`mock`目录下可以使用多个文件夹来存放接口文件，以达到模块化的需求
+

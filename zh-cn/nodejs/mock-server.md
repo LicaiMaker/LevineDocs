@@ -51,6 +51,8 @@ function uploadFile(localPath,remotePath){
 
 - 启动监听
 
+  **进入到mock-server目录**：
+
 ```shell
 node mock-gaze2.js
 ```
@@ -65,18 +67,20 @@ node mock-gaze2.js
 
   但是呢，现在没有上传`node_modules`文件夹，故需要在服务器上安装一下依赖库
 
+  **进入到mock-server目录**：
+  
   ```
-  npm install 
+npm install 
   ```
 
   然后：
 
   在服务器上启动`mock-start.js`
-
+  
   ```js
-  node mock-start.js
+node mock-start.js
   ```
-
+  
   这样就能在本地修改，并同步到远端了
 
 > tip: 如果需要接口服务持久的运行在服务器上呢，可以使用forever库来启动`mock-start.js`:

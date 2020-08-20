@@ -62,4 +62,4 @@ else
  visits=parseInt(visits)+1;
 } 
 setCookie("counter", visits, now)
-document.write("您是到访的第" + visits + "位用户！")
+console.log("您是到访的第" + visits + "位用户！")

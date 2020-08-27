@@ -26,7 +26,9 @@ node mock-start.js
 
 然后就可在浏览器中通过`localhost:8090/api1`来访问接口了
 
-并且可以实时修改代码，自动重启
+并且可以实时修改代码，自动重启。
+
+> 温馨提示: 如果修改的是启动文件(本例中就是`mock-start.js`文件)，则需要重启服务器才能生效!!! 
 
 #### 第二种情况：本地监听，并且上传到服务器，并且在远端服务器启动该接口服务
 
@@ -68,19 +70,19 @@ node mock-gaze2.js
   但是呢，现在没有上传`node_modules`文件夹，故需要在服务器上安装一下依赖库
 
   **进入到mock-server目录**：
-  
+
   ```
-npm install 
+  npm install 
   ```
 
   然后：
 
   在服务器上启动`mock-start.js`
-  
+
   ```js
-node mock-start.js
+  node mock-start.js
   ```
-  
+
   这样就能在本地修改，并同步到远端了
 
 > tip: 如果需要接口服务持久的运行在服务器上呢，可以使用forever库来启动`mock-start.js`:
@@ -92,9 +94,7 @@ node mock-start.js
 >
 > 
 
-
-
-### 附录
+> 温馨提示: 如果修改的是启动文件(本例中就是`mock-gaze2.js`文件)，则需要重启服务器才能生效!!! 
 
 `mock`接口文件编写规范：
 

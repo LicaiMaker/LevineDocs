@@ -1,20 +1,19 @@
 ## 文档分类
 
-### [Android](Android)
+### [Android](Android/)
 
-### [Python](python)
+### [Python](python/)
 
-### [Markdown](markdown)
+### [Markdown](markdown/)
 
-### [Vue](vue)
+### [Vue](vue/)
 
-### [Docker](/zh-cn/docker/)
+### [Docker](docker/)
 
-### [Linux](/zh-cn/linux/)
+### [Linux](linux/)
 
-### [nginx](/zh-cn/nginx/)
+### [nginx](nginx/)
 
-### [git](/zh-cn/git/)
+### [git](git/)
 
-### [nodejs](/zh-cn/nodejs/)
-
+### [nodejs](nodejs/)

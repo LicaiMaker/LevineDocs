@@ -1,6 +1,6 @@
 ## 文档分类
 
-### [Android](/zh-cn/Android/)
+### [Android](Android)
 
 ### [Python](/zh-cn/python/)
 

@@ -166,8 +166,8 @@ def getWeekDay(year, month, day):
 来源：简书
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 ```
+### 8.Python中生成switch  
 
-### 8.Python中生成switch
 ```
 class switch(object):
     def __init__(self, value):
@@ -190,9 +190,12 @@ class switch(object):
             return False
 
 ```
+
+
 > 上面使用生成器，在遍历switch(value)时生成一个match函数，用法如下：
 
-```
+
+```python
 from .switch import switch
 value = 'a'
 for case in switch(value):
@@ -203,5 +206,6 @@ for case in switch(value):
         break
     if case('c'):
         break;
-    ...    
+    ...  
+    
 ```

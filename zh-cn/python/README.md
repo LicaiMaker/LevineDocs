@@ -6,3 +6,5 @@
 
 ###  [部署](/zh-cn/python/部署/)
 
+### [Python基础](/zh-cn/python/Python基础/)
+

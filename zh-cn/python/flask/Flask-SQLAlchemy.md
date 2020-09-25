@@ -150,7 +150,15 @@ User.query.paginate(2,3,False).page  ---当前页
 User.query.paginate(2,3,False).pages ---总页数
 ```
 
-> 常用筛选关键字
+> 常用筛选关键字  
+
+> filter和filter_by:
+> filter用类名.属性名，比较用==，filter_by直接用属性名，比较用=
+> 不过这个是语法小细节
+```
+session.query(MyClass).filter(MyClass.name == 'some name')
+session.query(MyClass).filter_by(name = 'some name')
+```
 
 > 补充：模型一对多的关系与relationship的用法以及与django中GenericRelations的用法
 ### flask中模型中的而一对多的关系建立
@@ -278,3 +286,61 @@ class Test(db.Model,Base):
 t =Test(name='haha')
 t.save()
 ```
+> 但是，上面的使用db.session.commit()方法，表示将当前的事务结束（先调用db.session.flush()然后结束当前事务）,如果出现问题，rollback只会回滚最后一次commit，前面的已提交的就不能一起回滚了，比如：
+```
+try:
+    model1=Model1(id=1,....)
+    db.add(model1)
+    db.session.commit()
+    # 此时产生了某种异常...
+    model2=Model2(....)
+    db.add(model2)
+    db.session.commit()
+except Exception as e:
+    db.session.rollback()
+```
+> 此时上面产生了异常后，虽然会执行db.session.rollback()，但是model1已经写入数据库，不可回滚了，所以，这里要求所有回滚是无效的，修改如下：
+```
+try:
+    model1=Model1(id=1,....)
+    db.add(model1)
+    db.session.flush()
+    # 此时产生了某种异常...
+    model2=Model2(....)
+    db.add(model2)
+    db.session.flush()
+    # 最后执行commit
+    db.session.commit()
+except Exception as e:
+    db.session.rollback()
+```
+> 上面使用了flush函数，并不会结束事务，所以可以回滚，所以将上面的base类改写：
+```
+# 创建一个基类，用于对象的CRUD操作
+class Base:
+    def save(self):
+        try:
+            db.session.add(self)  # self实例化对象代表就是u对象
+            db.session.flush()
+        except Exception as e:
+            print("name:%s,exception:$s"%self.__repr__(),e)
+            db.session.rollback()
+
+    # 定义静态类方法接收List参数
+    @staticmethod
+    def save_all(List):
+        try:
+            db.session.add_all(List)
+            db.session.flush()
+        except:
+            db.session.rollback()
+
+    # 定义删除方法
+    def delete(self):
+        try:
+            db.session.delete(self)
+            db.session.flush()
+        except:
+            db.session.rollback()
+```
+> flush和commit之后都能够拿到对象的id，因为已经写入数据库了，只是执行flush时是可回滚的，而commit，提交当前事务，只能回滚最后一次commit，而且commit本质上也是执行了flush方法的

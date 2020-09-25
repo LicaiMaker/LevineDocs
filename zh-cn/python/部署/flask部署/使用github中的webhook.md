@@ -15,8 +15,6 @@ import os
 from flask import request
 from flask_restful import Resource
 from App import settings
-
-
 class WebHook(Resource):
     def post(self):# github中会使用post方法来请求
         '''用于github的webhook的post请求，拿到请求后
@@ -35,7 +33,6 @@ class WebHook(Resource):
                 return "出现错误"
 def depoly():
     try:
-
         '''首先下本地需要执行pip freeze > requirements.txt然后在远端将这里面的包安装'''
         # 1.启动python虚拟环境并切换到仓库目录
         os.system('/bin/bash --rcfile /home/OldManInfo_env/bin/activate')
@@ -67,9 +64,13 @@ def depoly():
         #     f.close()
         return False
 ```
+
+
 > 在deploy方法中执行了一些shell命令。用于代码更新和数据库操作，其中在settings.py中配置了两个布尔参数INIT_DB和MIGRATE_DB来控制是否初始化数据库和是否迁移数据连个操作
 
-但是这个操作可能会显示超时，这是因为再执行os.system命令时，可能会超时，但是命令基本上都会被执行，同样，可以用subprocess.Popen单体os.system，更多详见python中使用shell命令
+
+
+但是这个操作可能会显示超时，这是因为再执行os.system命令时，可能会超时，但是命令基本上都会被执行，同样，可以用subprocess.Popen或os.system，更多详见python中使用shell命令
 - 添加路由
 需要将这个Resource添加到‘http://example.com/webhook’上
 `api.add_reource(WebHook,'/webhook',endpoint='webhook')`

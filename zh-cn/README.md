@@ -2,11 +2,11 @@
 
 ### [Android](Android)
 
-### [Python](/zh-cn/python/)
+### [Python](python)
 
-### [Markdown](/zh-cn/markdown/)
+### [Markdown](markdown)
 
-### [Vue](/zh-cn/vue/)
+### [Vue](vue)
 
 ### [Docker](/zh-cn/docker/)
 
@@ -17,3 +17,4 @@
 ### [git](/zh-cn/git/)
 
 ### [nodejs](/zh-cn/nodejs/)
+
